@@ -21,17 +21,17 @@ void PrintArray(int[,] matr)
         Console.WriteLine();
     }
 }
-int[,] matrix = new int[3, 3];
+int[,] matrix = new int[3, 4];
 FillArray(matrix);
 Console.WriteLine();
 PrintArray(matrix);
 
-for (int i = 0; i < matrix.GetLength(0); i++)
+for (int i = 0; i < matrix.GetLength(1); i++)
 {
     int average = 0;
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    for (int j = 0; j < matrix.GetLength(0); j++)
     {
         average += matrix[j, i];
     }
-    Console.WriteLine($"Среднее арифметическое элементов столбца {i + 1} = {(float)average / matrix.GetLength(1)}");
+    Console.WriteLine($"Среднее арифметическое элементов столбца {i + 1} = {(float)average / matrix.GetLength(0)}");
 }
